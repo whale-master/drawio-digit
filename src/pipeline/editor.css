@@ -1,0 +1,74 @@
+.pipeline-grid {
+  position: relative;
+  outline: 0;
+  user-select: none;
+  touch-action: none;
+  color: #192c40;
+  font: 13px Arial, "Microsoft YaHei", sans-serif;
+}
+.pipeline-picture, .pipeline-picture svg { display: block; pointer-events: none; }
+.pipeline-grid.pipeline-drawing { cursor: crosshair; }
+.pipeline-cursor {
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 2px solid #206abb;
+  background: rgba(64, 135, 209, .12);
+  outline: 1px solid rgba(255, 255, 255, .8);
+  outline-offset: -3px;
+}
+.pipeline-cursor.pipeline-selected { border-width: 3px; border-color: #10578e; }
+.pipeline-entry, .pipeline-panel {
+  font: 13px Arial, "Microsoft YaHei", sans-serif;
+  color: #1f303f;
+  background: #fff;
+  border: 1px solid #a6b8c8;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(30, 50, 70, .18);
+}
+.pipeline-entry {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+}
+.pipeline-panel {
+  position: fixed;
+  z-index: 5;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 8px;
+}
+.pipeline-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+.pipeline-mode { margin-right: 6px; color: #184c79; }
+.pipeline-cycles { display: inline-flex; align-items: center; gap: 4px; margin-right: 3px; }
+.pipeline-panel input, .pipeline-panel select, .pipeline-entry input {
+  font: inherit;
+  box-sizing: border-box;
+  color: #1f303f;
+  background: #fff;
+  border: 1px solid #9baaba;
+  border-radius: 3px;
+  height: 26px;
+  padding: 2px 4px;
+}
+.pipeline-cycles input { width: 4.5em; }
+.pipeline-entry input { width: 9em; user-select: text; }
+.pipeline-panel button, .pipeline-entry button {
+  font: inherit;
+  height: 26px;
+  white-space: nowrap;
+  padding: 2px 6px;
+  background: #f6f8fa;
+  border: 1px solid #c3ced7;
+  border-radius: 3px;
+  color: #263d54;
+  cursor: pointer;
+}
+.pipeline-panel button:disabled { opacity: .45; cursor: default; }
+.pipeline-panel button[aria-pressed="true"] { background: #dbeaff; border-color: #377dc5; }
+.pipeline-panel :focus-visible, .pipeline-entry :focus-visible { outline: 2px solid #2174c3; outline-offset: 1px; }
+.pipeline-feedback { min-height: 16px; padding-top: 5px; color: #435a6f; }
+.pipeline-feedback.pipeline-error { color: #a12b1f; }

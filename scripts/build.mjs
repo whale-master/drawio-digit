@@ -6,7 +6,8 @@ import { build } from 'esbuild';
 const webapp = 'vendor/drawio/src/main/webapp';
 await cp(webapp, 'dist', { recursive: true });
 await build({
-  entryPoints: { wavedrom: 'src/wavedrom/plugin.js', 'wavedrom-render': 'src/wavedrom/render.js' },
+  entryPoints: { wavedrom: 'src/wavedrom/plugin.js', 'wavedrom-render': 'src/wavedrom/render.js',
+    pipeline: 'src/pipeline/plugin.js' },
   outdir: 'dist/plugins',
   bundle: true,
   minify: true,
@@ -15,8 +16,10 @@ await build({
 });
 await appendFile('dist/js/app.min.js', "\nApp.pluginRegistry.wavedrom = 'plugins/wavedrom.js';\n");
 await copyFile('src/wavedrom/editor.css', 'dist/plugins/wavedrom.css');
+await appendFile('dist/js/app.min.js', "\nApp.pluginRegistry.pipeline = 'plugins/pipeline.js';\n");
+await copyFile('src/pipeline/editor.css', 'dist/plugins/pipeline.css');
 await appendFile('dist/js/PreConfig.js', `
-urlParams.p = [urlParams.p, 'wavedrom'].filter(Boolean).join(';');
+urlParams.p = [urlParams.p, 'wavedrom', 'pipeline'].filter(Boolean).join(';');
 urlParams.splash = urlParams.splash || '0';
 `);
 await mkdir('dist/licenses', { recursive: true });

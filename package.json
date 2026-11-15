@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test:browser": "node --test tests/wavedrom.test.cjs",
+    "test": "node --test tests/pipeline-model.test.cjs",
+    "test:browser": "node --test tests/wavedrom.test.cjs tests/pipeline.test.cjs",
     "start": "node scripts/build.mjs && python -m http.server 8765 --bind 127.0.0.1 --directory dist"
   },
   "dependencies": {
