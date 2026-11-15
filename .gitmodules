@@ -1,3 +1,6 @@
 [submodule "vendor/drawio"]
 	path = vendor/drawio
 	url = https://github.com/jgraph/drawio.git
+[submodule "vendor/wavedrom"]
+	path = vendor/wavedrom
+	url = https://github.com/wavedrom/wavedrom.git
