@@ -1,0 +1,7 @@
+{
+  "name": "drawio-digit",
+  "private": true,
+  "devDependencies": {
+    "@mindfoldhq/trellis": "0.6.17"
+  }
+}
