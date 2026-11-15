@@ -19,3 +19,7 @@ If you're using Codex or another agent-capable tool, additional project-scoped h
 Managed by Trellis. Edits outside this block are preserved; edits inside may be overwritten by a future `trellis update`.
 
 <!-- TRELLIS:END -->
+
+# 项目目的
+
+本项目基于 draw.io，旨在让用户更方便地绘制和编辑波形图、流水图、时空图和状态机图。
